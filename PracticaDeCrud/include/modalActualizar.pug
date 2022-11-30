@@ -1,10 +1,10 @@
 #modalHardware1.modal.fade(tabindex="-1" aria-labelledby="modalHardware" aria-hidden="true")
     .modal-dialog
         .modal-content
-            .modal-header.bg-.bg-info.gradient.text-white
+            .modal-header.bg-warning.gradient.text-black
                 h5(class="modal-title" id="exampleModalLabel") Editar Hardware
                 button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
-            .modal-body.bg-secondary.bg-gradient.text-light
+            .modal-body.text-dark
                 form(action="/update" method="POST")
                     input(name="edit_id" id="edit_id" type="text" hidden)
                     .mb-3            
@@ -33,4 +33,4 @@
                         #fotografiaHelp.form-text.text-light Actualizar imagen de equipo
                         .d-flex.justify-content-end
                     .d-grid.gap-2
-                            button.btn.btn-primary(type="submit") Actualizar              
+                            button.btn.btn-warning(type="submit") Actualizar              
