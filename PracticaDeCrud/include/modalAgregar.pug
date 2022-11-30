@@ -1,0 +1,39 @@
+.container 
+    .row.d-flex.justify-content-center 
+        .col-6
+            form.text-dark.rounded(action="/create" method="POST")
+                .d-grid.gap-2
+                    button.btn.btn-success(type='button' data-bs-toggle='modal' data-bs-target='#modalHardware')| Agregar equipo
+                    #modalHardware.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                        div.modal-dialog
+                            div.modal-content
+                                div.modal-header
+                                    h1#exampleModalLabel.modal-title.fs-5.text-dark Agregar dispositivos
+                                div.modal-body
+                                    .mb-3
+                                        label.form-label.text-dark(for="nombre") Nombre
+                                        input.form-control#nombre(type="text" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre del equipo")
+                                        .form-text.text-light#nombreHelp Por favor ingresa un nombre del equipo
+                                    .mb-3
+                                        label.form-label.text-dark(for="modelo") Modelo
+                                        input.form-control#modelo(type="text" aria-describedby="modeloHelp" name="modelo" placeholder="Modelo del equipo")
+                                        .form-text.text-light#modeloHelp Por favor ingresa del modelo valido.
+                                    .mb-3
+                                        label.form-label.text-dark(for="marca") Marca
+                                        input.form-control#marca(type="text" aria-describedby="marcaHelp" name="marca" placeholder="Marca del Equipo")
+                                        .form-text.text-light#marcaHelp Por favor ingresa del equipo valido.
+                                    .mb-3
+                                        label.form-label.text-dark(for="descripcion") Descripcion
+                                        input.form-control#descripcion(type="text" aria-describedby="descripcionHelp" name="descripcion" placeholder="Descripcion")
+                                        .form-text.text-light#descripcionHelp Por favor ingresa un una descripcion valido.
+                                    .mb-3
+                                        label.form-label.text-dark(for="fecha") Año de lanzamiento
+                                        input.form-control#fecha(type="date" aria-describedby="fechaHelp" name="fecha" placeholder="Año de lanxamiento")
+                                        .form-text.text-light#fechaHelp Por favor ingresa un telefono valido.
+                                    .mb-3
+                                        label.form-label.text-dark(for="fotografia") Link de imagen
+                                        input.form-control#fotografia(type="file" aria-describedby="fotografiaHelp" name="fotografia" placeholder="Link de imagen")
+                                        .form-text.text-light#fotografiaHelp Por favor ingresa una Imagen valido.
+                                        .d-flex.justify-content-end
+                                        .d-grid.gap-2
+                                            button.btn.btn-primary(type="submit") Guardar Datos

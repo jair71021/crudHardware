@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        title Crud Hardware
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+    body.bg-image.text-white(style="\
+        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp');\
+        height: 100vh;\
+        ")
+        .container
+            .row.d-flex.justify-content-center
+                .col-12.d-flex.justify-content-center
+                        h1 Hardware de agregar  
+        .container
+            .row.d-flex.justify-content-center
+                .col-6 
+                    
+                include ../include\modalAgregar.pug
+        br
+        br
+        br
+        .container 
+            .row 
+                .col 
+                    table.table.table-dark.table-striped.table-hover.table-bordered.table-sm.table-responsive-sm
+                        thead
+                            tr
+                                th(scope="col") Nombre
+                                th(scope="col") Modelo
+                                th(scope="col") Marca
+                                th(scope="col") Descripcion
+                                th(scope="col") Año de lanzamiento
+                                th(scope="col") Link de imagen
+                                th(scope="col") Actualizar
+                                th(scope="col") Eliminar
+                        tbody
+                        if ok 
+                            each hardware in Hardwares
+                                tr
+                                    td.d-none=hardware._id
+                                    td=hardware.nombre
+                                    td=hardware.modelo
+                                    td=hardware.marca
+                                    td=hardware.descripcion
+                                    td=hardware.fecha
+                                    td=hardware.imagen
+                                    
+                                    td 
+                                        button.btn.btn-info#btnEditar Actualizar
+                                    td
+                                        a.btn.btn-danger(href=`/delete/${hardware._id}`) Eliminar
+                                        i
+                        else
+                            tr
+                                td Ingresa un dato
+                                td Ingresa un dato
+                                td Ingresa un dato
+                                td Ingresa un dato
+                                td Ingresa un dato
+                                td Ingresa un dato
+                                td 
+                                    button.btn.btn-warinig Actualizar
+                                td
+                                    button.btn.btn-danger Eliminar
+                                    
+        include ../include\modalActualizar.pug    
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+        script(src="/static/js/modal.js") 

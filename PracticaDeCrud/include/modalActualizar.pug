@@ -1,0 +1,36 @@
+#modalHardware1.modal.fade(tabindex="-1" aria-labelledby="modalHardware" aria-hidden="true")
+    .modal-dialog
+        .modal-content
+            .modal-header.bg-.bg-info.gradient.text-white
+                h5(class="modal-title" id="exampleModalLabel") Editar Hardware
+                button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+            .modal-body.bg-secondary.bg-gradient.text-light
+                form(action="/update" method="POST")
+                    input(name="edit_id" id="edit_id" type="text" hidden)
+                    .mb-3            
+                        label.form-label.text-dark(for="nombre") Nombre
+                        input.form-control(type="text" aria-describedby="nombreHelp" id="edit_nombre" name="nombre" placeholder="Nombre del equipo")
+                        #nombreHelp.form-text.text-light Actualizar nombre de equipo
+                    .mb-3
+                        label.form-label.text-dark(for="modelo") Modelo
+                        input.form-control(type="text" aria-describedby="modeloHelp" id="edit_modelo" name="modelo" placeholder="Modelo del equipo")
+                        #modeloHelp.form-text.text-light Actualizar modelo de equipo
+                    .mb-3
+                        label.form-label.text-dark(for="marca") Marca
+                        input.form-control(type="text" aria-describedby="marcaHelp" id="edit_marca" name="marca" placeholder="Marca del Equipo")
+                        #marcaHelp.form-text.text-light Actualizar marca de equipo
+                    .mb-3
+                        label.form-label.text-dark(for="descripcion") Descripcion
+                        input.form-control(type="text" aria-describedby="descripcionHelp" id="edit_descripcion" name="descripcion" placeholder="Descripcion")
+                        #descripcionHelp.form-text.text-light Actualizar descripcion de equipo
+                    .mb-3
+                        label.form-label.text-dark(for="fecha") Año de lanzamiento
+                        input.form-control(type="date" aria-describedby="fechaHelp" id="edit_fecha" name="fecha" placeholder="Año de lanxamiento")
+                        #fechaHelp.form-text.text-light PActualizar año de equipo
+                    .mb-3
+                        label.form-label.text-dark(for="fotografia") Link de imagen
+                        input.form-control(type="file" aria-describedby="fotografiaHelp" id="edit_imagen" name="fotografia" placeholder="Link de imagen")
+                        #fotografiaHelp.form-text.text-light Actualizar imagen de equipo
+                        .d-flex.justify-content-end
+                    .d-grid.gap-2
+                            button.btn.btn-primary(type="submit") Actualizar              
